@@ -7,6 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        main: 'var(--color-bg-main)',
+        primary: 'var(--color-text-primary)',
+        surface: 'var(--color-surface)',
+        accent: 'var(--color-accent)',
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-lora)', 'Georgia', 'serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+      },
       typography: {
         DEFAULT: {
           css: {
