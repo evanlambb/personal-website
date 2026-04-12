@@ -13,7 +13,7 @@ export function SiteHeader() {
       className="sticky top-0 z-10 w-full border-b border-primary"
       style={{ backgroundColor: 'var(--color-bg-main)' }}
     >
-      <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-4 px-6 py-6 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-0 md:py-8">
+      <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-4 px-6 py-4 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-0 md:py-5">
         {/* Left column: brand */}
         <div className="justify-self-start">
           <Link

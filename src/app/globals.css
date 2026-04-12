@@ -5,6 +5,13 @@
   --color-text-primary: #2c312e;
   --color-surface: #ebebe6;
   --color-accent: #b85c38;
+  --header-height: 7rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: 6rem;
+  }
 }
 
 body {
