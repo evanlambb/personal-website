@@ -95,6 +95,25 @@ body {
   margin: 0;
 }
 
+/* Experience card expand/collapse */
+.experience-card-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease;
+}
+
+.tech-tag {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--color-text-primary);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
