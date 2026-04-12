@@ -9,7 +9,7 @@ export function ExperienceCard({ entry }: { entry: ExperienceEntry }) {
 
   return (
     <div
-      className="experience-card cursor-pointer rounded-md border border-primary/20 bg-surface"
+      className="experience-card cursor-pointer rounded-md border border-primary/20 bg-[var(--color-surface)]"
       onClick={() => setExpanded((prev) => !prev)}
       role="button"
       tabIndex={0}
