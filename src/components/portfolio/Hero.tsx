@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="flex min-h-0 flex-1 flex-col"
+      className="flex min-h-screen flex-col"
       aria-labelledby="hero-heading"
     >
       <div className="flex flex-1 items-center justify-center px-6 py-12 sm:px-10 md:py-16 lg:px-14">
