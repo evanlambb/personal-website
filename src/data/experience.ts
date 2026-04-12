@@ -23,4 +23,16 @@ export const experiences: ExperienceEntry[] = [
     ],
     techStack: ['Java', 'Spring Boot', 'AWS', 'PostgreSQL', 'Docker', 'Jenkins'],
   },
+  {
+    company: 'Acme Corp',
+    role: 'Junior Developer',
+    startDate: 'May 2025',
+    endDate: 'August 2025',
+    logoSrc: '/images/logos/acme.png',
+    description: [
+      'First bullet point about what you did.',
+      'Second bullet point about impact or results.',
+    ],
+    techStack: ['Python', 'Django', 'Redis'],
+  },
 ]
