@@ -21,23 +21,23 @@ export function ExperienceCard({ entry }: { entry: ExperienceEntry }) {
         }
       }}
     >
-      <div className="flex items-center gap-4 px-5 py-4 sm:gap-6 sm:px-6">
-        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded sm:h-16 sm:w-16">
+      <div className="flex items-center gap-5 px-6 py-5 sm:gap-7 sm:px-8 sm:py-6">
+        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded sm:h-20 sm:w-20">
           <Image
             src={entry.logoSrc}
             alt={`${entry.company} logo`}
             fill
             className="object-contain"
-            sizes="64px"
+            sizes="80px"
           />
         </div>
 
         <div className="min-w-0 flex-1">
-          <h3 className="heading-4 truncate">{entry.company}</h3>
-          <p className="font-sans text-sm font-medium sm:text-base">
+          <h3 className="heading-3 truncate">{entry.company}</h3>
+          <p className="font-sans text-base font-medium sm:text-lg">
             {entry.role}
           </p>
-          <p className="font-sans text-xs tracking-wide text-primary/60 sm:text-sm">
+          <p className="font-sans text-sm tracking-wide text-primary/60 sm:text-base">
             {entry.startDate} – {entry.endDate}
           </p>
         </div>
@@ -62,8 +62,8 @@ export function ExperienceCard({ entry }: { entry: ExperienceEntry }) {
         style={{ gridTemplateRows: expanded ? '1fr' : '0fr' }}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-primary/10 px-5 pb-5 pt-4 sm:px-6">
-            <ul className="body-text mb-4 list-disc space-y-1.5 pl-5 text-sm sm:text-base">
+          <div className="border-t border-primary/10 px-6 pb-6 pt-5 sm:px-8">
+            <ul className="body-text mb-4 list-disc space-y-2 pl-5 text-base sm:text-lg">
               {entry.description.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}

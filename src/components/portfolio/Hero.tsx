@@ -8,7 +8,7 @@ export function Hero() {
       aria-labelledby="hero-heading"
     >
       <div className="flex flex-1 items-center justify-center px-6 py-12 sm:px-10 md:py-16 lg:px-14">
-        <div className="flex w-full items-center justify-center gap-6 sm:gap-10 md:gap-14 lg:gap-16">
+        <div className="mx-auto flex w-full max-w-4xl items-center justify-center gap-6 sm:gap-10 md:gap-14 lg:gap-16">
           <div className="shrink text-left">
             <p className="hero-intro">Hey there, my name is</p>
             <h1 id="hero-heading" className="hero-title">

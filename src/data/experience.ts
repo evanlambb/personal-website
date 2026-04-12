@@ -28,7 +28,7 @@ export const experiences: ExperienceEntry[] = [
     role: 'Junior Developer',
     startDate: 'May 2025',
     endDate: 'August 2025',
-    logoSrc: '/images/logos/acme.png',
+    logoSrc: '/images/logos/rbc.jpg',
     description: [
       'First bullet point about what you did.',
       'Second bullet point about impact or results.',
