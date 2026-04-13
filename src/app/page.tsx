@@ -10,7 +10,6 @@ export default function Home() {
       <Experience />
       {/* Anchor targets for nav links until those sections exist */}
       <div id="projects" className="sr-only" tabIndex={-1} aria-hidden />
-      <div id="resume" className="sr-only" tabIndex={-1} aria-hidden />
       <div id="blog" className="sr-only" tabIndex={-1} aria-hidden />
     </div>
   )

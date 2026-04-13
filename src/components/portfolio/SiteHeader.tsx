@@ -1,11 +1,15 @@
 import Link from 'next/link'
 
-const navLinks = [
+const navLinks: { href: string; label: string; newTab?: boolean }[] = [
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
-  { href: '#resume', label: 'Resume' },
   { href: '#blog', label: 'Blog' },
+  { href: '/Evan_Lamb_Resume.pdf', label: 'Resume', newTab: true },
 ]
+
+const linkClassName =
+  'text-sm font-semibold text-primary transition-colors duration-200 hover:text-accent hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
+const linkStyle = { fontFamily: 'var(--font-inter), system-ui, sans-serif' }
 
 export function SiteHeader() {
   return (
@@ -30,13 +34,25 @@ export function SiteHeader() {
           <ul className="flex list-none gap-8">
             {navLinks.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-sm font-semibold text-primary transition-colors duration-200 hover:text-accent hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-                  style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
-                >
-                  {item.label}
-                </Link>
+                {item.newTab ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClassName}
+                    style={linkStyle}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={linkClassName}
+                    style={linkStyle}
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
