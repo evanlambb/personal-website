@@ -121,6 +121,15 @@ body {
   white-space: nowrap;
 }
 
+.social-icon {
+  color: var(--color-text-primary);
+  transition: color 200ms;
+}
+
+.social-icon:hover {
+  color: var(--color-accent);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

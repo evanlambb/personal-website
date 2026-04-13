@@ -1,4 +1,11 @@
 import Link from 'next/link'
+import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'
+
+const socialLinks = [
+  { href: 'https://github.com/evanlambb', label: 'GitHub', icon: FaGithub },
+  { href: 'https://www.linkedin.com/in/evanlamb11/', label: 'LinkedIn', icon: FaLinkedinIn },
+  { href: 'https://x.com/evan_lamb11', label: 'X', icon: FaXTwitter },
+]
 
 const navLinks: { href: string; label: string; newTab?: boolean }[] = [
   { href: '#experience', label: 'Experience' },
@@ -8,7 +15,7 @@ const navLinks: { href: string; label: string; newTab?: boolean }[] = [
 ]
 
 const linkClassName =
-  'text-sm font-semibold text-primary transition-colors duration-200 hover:text-accent hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
+  'text-base font-semibold text-primary transition-colors duration-200 hover:text-accent hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
 const linkStyle = { fontFamily: 'var(--font-inter), system-ui, sans-serif' }
 
 export function SiteHeader() {
@@ -58,8 +65,21 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        {/* Right column: spacer (reserved for future dark-mode toggle / contact) */}
-        <div className="hidden md:block" />
+        {/* Right column: social links */}
+        <div className="hidden items-center gap-4 justify-self-end md:flex">
+          {socialLinks.map(({ href, label, icon: Icon }) => (
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="social-icon"
+            >
+              <Icon size={27} />
+            </a>
+          ))}
+        </div>
       </div>
     </header>
   )
