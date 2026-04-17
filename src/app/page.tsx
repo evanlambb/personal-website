@@ -1,5 +1,6 @@
 import { Hero } from '@/components/portfolio/Hero'
 import { Experience } from '@/components/portfolio/Experience'
+import { Projects } from '@/components/portfolio/Projects'
 import { SiteHeader } from '@/components/portfolio/SiteHeader'
 
 export default function Home() {
@@ -8,8 +9,8 @@ export default function Home() {
       <SiteHeader />
       <Hero />
       <Experience />
-      {/* Anchor targets for nav links until those sections exist */}
-      <div id="projects" className="sr-only" tabIndex={-1} aria-hidden />
+      <Projects />
+      {/* Anchor target for nav link until blog section exists */}
       <div id="blog" className="sr-only" tabIndex={-1} aria-hidden />
     </div>
   )
