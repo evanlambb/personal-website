@@ -102,8 +102,8 @@ body {
   margin: 0;
 }
 
-/* Experience card expand/collapse */
-.experience-card-body {
+/* Expandable card expand/collapse */
+.expandable-card-body {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 300ms ease;
