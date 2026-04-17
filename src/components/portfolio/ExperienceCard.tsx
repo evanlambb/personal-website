@@ -58,7 +58,7 @@ export function ExperienceCard({ entry }: { entry: ExperienceEntry }) {
       </div>
 
       <div
-        className="experience-card-body"
+        className="expandable-card-body"
         style={{ gridTemplateRows: expanded ? '1fr' : '0fr' }}
       >
         <div className="overflow-hidden">
