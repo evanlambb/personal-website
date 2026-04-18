@@ -9,7 +9,7 @@ export function ProjectCard({ entry }: { entry: ProjectEntry }) {
 
   return (
     <div
-      className="cursor-pointer rounded-md border border-primary/20 bg-[var(--color-surface)]"
+      className="cursor-pointer rounded-md border border-primary/20 border-l-4 border-l-accent bg-[var(--color-surface)]"
       onClick={() => setExpanded((prev) => !prev)}
       role="button"
       tabIndex={0}
