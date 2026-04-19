@@ -1,63 +1,59 @@
-interface ShapeProps {
-  className?: string
+interface CornerMarkProps {
+  position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
 }
 
-function FilledCircle({ className }: ShapeProps) {
+function CornerMark({ position }: CornerMarkProps) {
+  const size = 32
+  const stroke = 2.5
+  const len = 20
+
+  const positionClasses: Record<string, string> = {
+    'top-left': 'top-0 left-0',
+    'top-right': 'top-0 right-0',
+    'bottom-left': 'bottom-0 left-0',
+    'bottom-right': 'bottom-0 right-0',
+  }
+
+  let d: string
+  switch (position) {
+    case 'top-left':
+      d = `M${stroke / 2} ${len} V${stroke / 2} H${len}`
+      break
+    case 'top-right':
+      d = `M${size - len} ${stroke / 2} H${size - stroke / 2} V${len}`
+      break
+    case 'bottom-left':
+      d = `M${stroke / 2} ${size - len} V${size - stroke / 2} H${len}`
+      break
+    case 'bottom-right':
+      d = `M${size - len} ${size - stroke / 2} H${size - stroke / 2} V${size - len}`
+      break
+  }
+
   return (
     <svg
-      className={className}
-      viewBox="0 0 100 100"
+      className={`absolute h-8 w-8 ${positionClasses[position]}`}
+      viewBox={`0 0 ${size} ${size}`}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <circle cx="50" cy="50" r="50" fill="var(--color-accent)" />
-    </svg>
-  )
-}
-
-function Ring({ className }: ShapeProps) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 100 100"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <circle
-        cx="50"
-        cy="50"
-        r="44"
+      <path
+        d={d}
         fill="none"
         stroke="var(--color-accent)"
-        strokeWidth="6"
+        strokeWidth={stroke}
+        strokeLinecap="square"
       />
     </svg>
   )
 }
 
-export function AccentShapesHero() {
+export function AccentCorners({ corners = ['top-left', 'bottom-right'] }: { corners?: CornerMarkProps['position'][] }) {
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <Ring className="absolute -right-16 top-1/3 h-48 w-48 opacity-[0.07] md:h-64 md:w-64 md:opacity-10" />
-      <FilledCircle className="absolute -left-6 bottom-12 hidden h-16 w-16 opacity-[0.08] md:block" />
-    </div>
-  )
-}
-
-export function AccentShapesExperience() {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <FilledCircle className="absolute -left-10 top-24 h-28 w-28 opacity-[0.06] md:h-40 md:w-40 md:opacity-[0.08]" />
-      <Ring className="absolute -right-12 bottom-16 hidden h-36 w-36 opacity-[0.07] md:block" />
-    </div>
-  )
-}
-
-export function AccentShapesProjects() {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <Ring className="absolute -left-14 top-16 h-44 w-44 opacity-[0.07] md:h-56 md:w-56 md:opacity-[0.09]" />
-      <FilledCircle className="absolute -right-8 bottom-24 hidden h-20 w-20 opacity-[0.07] md:block" />
+    <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+      {corners.map((pos) => (
+        <CornerMark key={pos} position={pos} />
+      ))}
     </div>
   )
 }

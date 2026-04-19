@@ -1,11 +1,11 @@
 import { projects } from '@/data/projects'
 import { ProjectCard } from './ProjectCard'
-import { AccentShapesProjects } from './AccentShapes'
+import { AccentCorners } from './AccentShapes'
 
 export function Projects() {
   return (
     <section id="projects" className="relative py-24 md:py-32" aria-labelledby="projects-heading">
-      <AccentShapesProjects />
+      <AccentCorners corners={['top-right', 'bottom-left']} />
       <div className="mx-auto max-w-4xl px-6 sm:px-10 lg:px-14">
         <div className="mb-12 text-center">
           <h2 id="projects-heading" className="heading-1">
