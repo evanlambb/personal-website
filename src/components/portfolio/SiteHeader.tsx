@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'
 
 const socialLinks = [
@@ -19,6 +22,15 @@ const linkClassName =
 const linkStyle = { fontFamily: 'var(--font-inter), system-ui, sans-serif' }
 
 export function SiteHeader() {
+  const pathname = usePathname()
+
+  const handleBrandClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === '/') {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
   return (
     <header
       className="sticky top-0 z-10 w-full border-b border-primary"
@@ -29,6 +41,7 @@ export function SiteHeader() {
         <div className="justify-self-start">
           <Link
             href="/"
+            onClick={handleBrandClick}
             className="text-xl font-bold tracking-tight text-primary transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
           >

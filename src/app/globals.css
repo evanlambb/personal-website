@@ -115,6 +115,18 @@ body {
    grow downward visually instead of shifting the viewport up. */
 html {
   overflow-anchor: none;
+  scroll-behavior: smooth;
+}
+
+/* Offset anchor-link targets so they land below the sticky header. */
+section[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 .tech-tag {
