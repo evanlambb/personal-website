@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { AccentCorners } from './AccentShapes'
 
 export function Hero() {
   return (
@@ -8,7 +7,6 @@ export function Hero() {
       className="relative flex min-h-[calc(100svh-var(--header-height))] flex-col"
       aria-labelledby="hero-heading"
     >
-      <AccentCorners corners={['bottom-left', 'bottom-right']} />
       <div className="flex flex-1 items-center justify-center px-6 py-12 sm:px-10 md:py-16 lg:px-14">
         <div className="mx-auto flex w-full max-w-4xl items-center justify-center gap-6 sm:gap-10 md:gap-14 lg:gap-16">
           <div className="shrink text-left">
