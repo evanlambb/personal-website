@@ -1,11 +1,9 @@
 import { experiences } from '@/data/experience'
 import { ExperienceCard } from './ExperienceCard'
-import { AccentCorners } from './AccentShapes'
 
 export function Experience() {
   return (
     <section id="experience" className="relative py-24 md:py-32" aria-labelledby="experience-heading">
-      <AccentCorners corners={['top-left', 'bottom-right']} />
       <div className="mx-auto max-w-4xl px-6 sm:px-10 lg:px-14">
         <div className="mb-12 text-center">
           <h2 id="experience-heading" className="heading-1">

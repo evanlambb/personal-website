@@ -109,6 +109,12 @@ body {
   transition: grid-template-rows 300ms ease;
 }
 
+/* Disable browser scroll anchoring so expanding cards always
+   grow downward visually instead of shifting the viewport up. */
+html {
+  overflow-anchor: none;
+}
+
 .tech-tag {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.85rem;
