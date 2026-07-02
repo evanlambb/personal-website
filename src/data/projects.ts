@@ -13,9 +13,9 @@ export const projects: ProjectEntry[] = [
     tagline: 'Detect and filter non-educational videos from your YouTube recommendations, instantly, with classical machine learning.', // [cite: 38]
     imageSrc: '/images/logos/placeholder.png', 
     description: [
-      'Classifies YouTube videos as educational or non-educational from their metadata to filter your YouTube feed in real time. [cite: 23]',
-      'Executes inference entirely client-side in the browser using a lightweight logistic regression and TF-IDF model. [cite: 24, 124]',
-      'Built a Python data pipeline that handles data collection, labeling, training, and exporting the model to a browser-ready format. [cite: 25]'
+      'Classifies YouTube videos as educational or non-educational from their metadata to filter your YouTube feed in real time.',
+      'Executes inference entirely client-side in the browser using a lightweight logistic regression and TF-IDF model.',
+      'Built a Python data pipeline that handles data collection, labeling, training, and exporting the model to a browser-ready format.'
     ],
     techStack: ['Python', 'JavaScript', 'HTML', 'CSS', 'Chrome Extension API'], // [cite: 39, 40]
     links: [
