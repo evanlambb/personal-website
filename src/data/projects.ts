@@ -9,6 +9,20 @@ export interface ProjectEntry {
 
 export const projects: ProjectEntry[] = [
   {
+    name: 'Connect Zero',
+    tagline: 'An AlphaZero-style game-playing agent that learns purely from self-play, no human game data.',
+    imageSrc: '/images/logos/placeholder.png',
+    description: [
+      'Implemented an AlphaZero-style game-playing agent from scratch that learns purely through self-play with no human game data, integrating Monte Carlo Tree Search with a policy/value neural network.',
+      'Engineered the full self-play training loop, game generation, a symmetry-augmented replay buffer, batched network updates, and versioned, resumable checkpointing with a NaN/inf loss guard to prevent poisoned checkpoints.',
+      'Developed an evaluation harness (arena match runner, generation-vs-generation win rates, anchored Elo with CSV/JSON export) that quantitatively confirmed each agent beats its baselines.',
+    ],
+    techStack: ['PyTorch', 'Python', 'NumPy', 'FastAPI'],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/evanlambb/Connect-Zero' },
+    ],
+  },
+  {
     name: 'Clarigo', // [cite: 1]
     tagline: 'Detect and filter non-educational videos from your YouTube recommendations, instantly, with classical machine learning.', // [cite: 38]
     imageSrc: '/images/logos/placeholder.png', 
