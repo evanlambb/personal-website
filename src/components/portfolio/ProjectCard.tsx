@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import type { ProjectEntry } from '@/data/projects'
+import { VideoEmbed } from './VideoEmbed'
 
 export function ProjectCard({ entry }: { entry: ProjectEntry }) {
   const [expanded, setExpanded] = useState(false)
@@ -62,6 +63,23 @@ export function ProjectCard({ entry }: { entry: ProjectEntry }) {
               ))}
             </div>
           )}
+
+          {entry.links && entry.links.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-4">
+              {entry.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-sm font-medium text-accent underline underline-offset-2 hover:opacity-80"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -71,28 +89,17 @@ export function ProjectCard({ entry }: { entry: ProjectEntry }) {
       >
         <div className="overflow-hidden">
           <div className="border-t border-primary/10 px-6 pb-6 pt-5 sm:px-8">
-            <ul className="body-text mb-4 list-disc space-y-2 pl-5 text-base sm:text-lg">
+            {entry.youtubeId && (
+              <div className="mb-5" onClick={(e) => e.stopPropagation()}>
+                <VideoEmbed youtubeId={entry.youtubeId} title={`${entry.name} demo video`} />
+              </div>
+            )}
+
+            <ul className="body-text list-disc space-y-2 pl-5 text-base sm:text-lg">
               {entry.description.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
             </ul>
-
-            {entry.links && entry.links.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-4">
-                {entry.links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-sans text-sm font-medium text-accent underline underline-offset-2 hover:opacity-80"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            )}
           </div>
         </div>
       </div>

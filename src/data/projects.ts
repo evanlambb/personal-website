@@ -5,19 +5,22 @@ export interface ProjectEntry {
   description: string[]
   techStack?: string[]
   links?: { label: string; href: string }[]
+  /** Optional YouTube video ID to embed in the expanded card, e.g. "cJf6P82O_ew" */
+  youtubeId?: string
 }
 
 export const projects: ProjectEntry[] = [
   {
     name: 'Connect Zero',
     tagline: 'An AlphaZero-style game-playing agent that learns purely from self-play, no human game data.',
-    imageSrc: '/images/logos/placeholder.png',
+    imageSrc: '/images/logos/connect_zero_square.jpg',
     description: [
       'Implemented an AlphaZero-style game-playing agent from scratch that learns purely through self-play with no human game data, integrating Monte Carlo Tree Search with a policy/value neural network.',
       'Engineered the full self-play training loop, game generation, a symmetry-augmented replay buffer, batched network updates, and versioned, resumable checkpointing with a NaN/inf loss guard to prevent poisoned checkpoints.',
       'Developed an evaluation harness (arena match runner, generation-vs-generation win rates, anchored Elo with CSV/JSON export) that quantitatively confirmed each agent beats its baselines.',
     ],
     techStack: ['PyTorch', 'Python', 'NumPy', 'FastAPI'],
+    youtubeId: 'cJf6P82O_ew',
     links: [
       { label: 'GitHub', href: 'https://github.com/evanlambb/Connect-Zero' },
     ],
@@ -25,7 +28,7 @@ export const projects: ProjectEntry[] = [
   {
     name: 'Clarigo', // [cite: 1]
     tagline: 'Detect and filter non-educational videos from your YouTube recommendations, instantly, with classical machine learning.', // [cite: 38]
-    imageSrc: '/images/logos/placeholder.png', 
+    imageSrc: '/images/logos/clarigo_square.jpg', 
     description: [
       'Classifies YouTube videos as educational or non-educational from their metadata to filter your YouTube feed in real time.',
       'Executes inference entirely client-side in the browser using a lightweight logistic regression and TF-IDF model.',
@@ -53,7 +56,7 @@ export const projects: ProjectEntry[] = [
   {
     name: 'Blox',
     tagline: 'A browser-based, AI-native Blender alternative that democratizes 3D game development with integrated generation, modeling, and animation.',
-    imageSrc: '/images/logos/placeholder.png', 
+    imageSrc: '/images/logos/blox_square.jpg', 
     description: [
       'Engineered an accessible 3D scene editor with a hierarchical structure and customizable dockable windows to collapse the game development pipeline into a single workspace.',
       'Integrated Google Gemini and the Meshy API to power primitive model blockouts, image-to-3D generation, and natural-language animation selection.',
