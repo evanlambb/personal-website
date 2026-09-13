@@ -13,7 +13,6 @@ const socialLinks = [
 const navLinks: { href: string; label: string; newTab?: boolean }[] = [
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
-  { href: '#blog', label: 'Blog' },
   { href: '/Evan_Lamb_Resume.pdf', label: 'Resume', newTab: true },
 ]
 

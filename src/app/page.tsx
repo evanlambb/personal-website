@@ -10,8 +10,6 @@ export default function Home() {
       <Hero />
       <Experience />
       <Projects />
-      {/* Anchor target for nav link until blog section exists */}
-      <div id="blog" className="sr-only" tabIndex={-1} aria-hidden />
     </div>
   )
 }
