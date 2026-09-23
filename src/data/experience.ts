@@ -11,6 +11,16 @@ export interface ExperienceEntry {
 
 export const experiences: ExperienceEntry[] = [
   {
+    company: 'Shopify',
+    role: 'Software Engineer',
+    startDate: 'January 2027',
+    endDate: 'April 2027',
+    logoSrc: '/images/logos/shopify_square.webp',
+    description: [
+      'Incoming Winter 2027 intern; will contribute to scalable infrastructure supporting millions of merchants.'],
+    techStack: [],
+  },
+  {
     company: 'Manulife',
     role: 'Software Engineer',
     startDate: 'January 2026',
